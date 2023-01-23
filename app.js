@@ -86,7 +86,7 @@ function keepalive() {
         console.log("web正在运行");
       } else {
         console.log("web未运行,发请求调起");
-        request(render_app_url + "/start", function (err, resp, body) {
+        request(app_url + "/start", function (err, resp, body) {
           if (!err) console.log("调起web成功:" + body);
           else console.log("请求错误:" + err);
         });
