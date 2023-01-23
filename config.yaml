@@ -4,23 +4,23 @@ dns:
   servers:
   - https+local://8.8.8.8/dns-query
 inbounds:
-- port: 8080
-  protocol: trojan
-  settings:
-    clients:
-    - password: "123"
-  streamSettings:
-    network: ws
-    wsSettings:
-      path: qwe
-  sniffing:
-    enabled: true
-    destOverride:
-    - http
-    - tls
-    - quic
+  - port: 8080
+    protocol: vmess
+    settings:
+      clients:
+        - id: "fab69ab4-5709-4dba-a7df-a0563d9e90ce"
+    streamSettings:
+      network: ws
+      wsSettings:
+        path: qwe
+    sniffing:
+      enabled: true
+      destOverride:
+        - http
+        - tls
+        - quic
 outbounds:
-- protocol: freedom
-  tag: direct
-  settings:
-    domainStrategy: UseIPv4
+  - protocol: freedom
+    tag: direct
+    settings:
+      domainStrategy: UseIPv4
