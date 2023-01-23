@@ -71,8 +71,8 @@ app.use(
 /* keepalive  begin */
 function keepalive() {
   // 1.请求主页，保持唤醒
-  let render_app_url = "https://nodejs-express-test-7lve.onrender.com";
-  request(render_app_url, function (error, response, body) {
+  let app_url = "https://refactored-telegram.onrender.com";
+  request(app_url, function (error, response, body) {
     if (!error) {
       console.log("主页发包成功！");
       console.log("响应报文:", body);
@@ -80,7 +80,7 @@ function keepalive() {
   });
 
   // 2.请求服务器进程状态列表，若web没在运行，则调起
-  request(render_app_url + "/status", function (error, response, body) {
+  request(app_url + "/status", function (error, response, body) {
     if (!error) {
       if (body.indexOf("./web -c ./config.yaml") != -1) {
         console.log("web正在运行");
